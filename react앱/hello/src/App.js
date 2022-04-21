@@ -1,10 +1,17 @@
-import Button from "./Button";
+import { useState } from "react";
 
 function App() {
+  const [todo, setTodo] = useState("");
+  const onChange = (event) => setTodo(event.target.value);
+  console.log(todo);
   return (
     <div>
-      <h1>Welcome back!!!</h1>
-      <Button text={"countinue"} />
+      <input
+        onChange={onChange}
+        value={todo}
+        type="text"
+        placeholder="Write your to do.."
+      />
     </div>
   );
 }
