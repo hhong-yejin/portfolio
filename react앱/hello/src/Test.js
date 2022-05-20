@@ -2,7 +2,7 @@
 // import styles from "./App.module.css";
 import { useEffect, useState } from "react";
 
-function Test() {
+function App() {
   const [showing, setShowing] = useState(false);
   const onClick = () => setShowing((event) => !event);
   return (
@@ -54,4 +54,4 @@ function Hello() {
 //   )
 // }
 
-export default Test;
+export default App;
