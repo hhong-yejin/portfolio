@@ -1,0 +1,29 @@
+.box {
+  width: 800px;
+  height: 400px;
+  margin: 50px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 10px gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box > div > ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.box li {
+  margin: 5px 0px;
+}
+
+.img {
+  height: 300px;
+  width: auto;
+  margin: 0px 40px 0px 0px;
+}
+
+.p {
+  width: 400px;
+}
