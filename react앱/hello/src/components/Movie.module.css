@@ -1,21 +1,41 @@
 .box {
+  cursor: pointer;
   width: 800px;
   height: 400px;
   margin: 50px;
-  border-radius: 10px;
-  box-shadow: 5px 5px 15px 10px gainsboro;
+  box-shadow: 5px 5px 12px 5px rgb(186, 186, 186);
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 
-.box > div > ul {
+.text {
+  width: 450px;
+  height: 300px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+
+.text::-webkit-scrollbar {
+  display: none;
+}
+
+.text > ul {
   list-style-type: none;
   padding: 0;
 }
 
-.box li {
+.text > ul > li {
   margin: 5px 0px;
+}
+
+.text > li:first-child {
+  margin: 0px 0px 10px 0px;
+}
+
+.text ul li ul li:last-child {
+  margin: 0px 0px 5px 0px;
 }
 
 .img {

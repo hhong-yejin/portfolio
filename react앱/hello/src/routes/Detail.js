@@ -29,7 +29,7 @@ function Detail() {
         <h1>Loading...</h1>
       ) : (
         <div
-          className={style.div}
+          className={style.container}
           style={{ backgroundImage: `url(${movie.background_image})` }}
         >
           <button onClick={() => navigate("/")}>뒤로가기</button>
@@ -57,9 +57,7 @@ function Detail() {
                 <li>상영 시간 : {movie.runtime}분</li>
                 <li>{movie.download_count}회 다운로드</li>
                 <li>
-                  {movie.description_intro.length > 500
-                    ? `${movie.description_intro.slice(0, 500)}...`
-                    : movie.description_intro}
+                  <div className={style.p}>{movie.description_intro}</div>
                 </li>
               </ul>
             </div>

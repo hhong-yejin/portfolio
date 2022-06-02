@@ -8,7 +8,7 @@ function Movie(a) {
     <div>
       <div className={style.box} onClick={() => navigate(`/movie/${a.id}`)}>
         <img src={a.coverImg} className={style.img} alt={a.title} />
-        <div>
+        <div className={style.text}>
           <ul>
             <li>
               <h2>{a.title}</h2>
@@ -21,8 +21,8 @@ function Movie(a) {
             <li>
               {" "}
               <p className={style.p}>
-                {a.summary.length > 300
-                  ? `${a.summary.slice(0, 300)}...`
+                {a.summary.length > 400
+                  ? `${a.summary.slice(0, 400)}...`
                   : a.summary}
               </p>
             </li>
