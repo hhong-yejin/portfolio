@@ -5,9 +5,6 @@ import { useNavigate } from "react-router";
 import style from "./Detail.module.css";
 
 function Detail() {
-  const moveHref = () => {
-    document.location.href = `${movie.url}`;
-  };
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [movie, setMovies] = useState();
@@ -33,10 +30,10 @@ function Detail() {
           style={{ backgroundImage: `url(${movie.background_image})` }}
         >
           <button onClick={() => navigate("/")}>뒤로가기</button>
-          {/* <h3>
-            <Link to="/">뒤로가기</Link>
-          </h3> */}
-          <div className={style.box} onClick={moveHref}>
+          <div
+            className={style.box}
+            onClick={() => window.open(`${movie.url}`)}
+          >
             <img
               className={style.img}
               src={movie.large_cover_image}

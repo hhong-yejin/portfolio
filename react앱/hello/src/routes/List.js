@@ -1,24 +1,32 @@
 import Movie from "../components/Movie";
+import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import style from "./Home.module.css";
 
-function Home() {
+function List() {
+  const listNums = [...Array(10)].map((_, i) => i + 1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const detail = searchParams.get("genre");
+  const page = searchParams.get("page");
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   const getMovies = async () => {
     const json = await (
       await fetch(
-        `https://yts.mx/api/v2/list_movies.json?minimum_rating=7&&sort_by=rating`
+        `https://yts.mx/api/v2/list_movies.json?sort_by=rating&&genre=${detail}&&page=${page}`
       )
     ).json();
     setMovies(json.data.movies);
     setLoading(false);
     console.log(json);
   };
+
   useEffect(() => {
     getMovies();
-  }, []);
+    console.log(detail);
+    console.log(page);
+  }, [detail, page]);
+
   return (
     <div>
       {loading ? (
@@ -36,10 +44,21 @@ function Home() {
               genres={movie.genres}
             />
           ))}
+          {listNums.map((listNums) => {
+            return (
+              <button
+                onClick={() =>
+                  setSearchParams({ genre: `${detail}`, page: `${listNums}` })
+                }
+              >
+                {listNums}
+              </button>
+            );
+          })}
         </div>
       )}
     </div>
   );
 }
 
-export default Home;
+export default List;
