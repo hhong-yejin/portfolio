@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // import { Link } from "react-router-dom";
-import { useNavigate } from "react-router";
 import style from "./Detail.module.css";
 
 function Detail() {
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [movie, setMovies] = useState();
   const { id } = useParams();
@@ -29,7 +27,6 @@ function Detail() {
           className={style.container}
           style={{ backgroundImage: `url(${movie.background_image})` }}
         >
-          <button onClick={() => navigate("/")}>뒤로가기</button>
           <div
             className={style.box}
             onClick={() => window.open(`${movie.url}`)}

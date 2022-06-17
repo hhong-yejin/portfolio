@@ -47,9 +47,10 @@ function List() {
           {listNums.map((listNums) => {
             return (
               <button
-                onClick={() =>
-                  setSearchParams({ genre: `${detail}`, page: `${listNums}` })
-                }
+                onClick={() => {
+                  setSearchParams({ genre: `${detail}`, page: `${listNums}` });
+                  window.scrollTo(0, 0);
+                }}
               >
                 {listNums}
               </button>
