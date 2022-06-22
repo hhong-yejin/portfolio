@@ -44,18 +44,24 @@ function List() {
               genres={movie.genres}
             />
           ))}
-          {listNums.map((listNums) => {
-            return (
-              <button
-                onClick={() => {
-                  setSearchParams({ genre: `${detail}`, page: `${listNums}` });
-                  window.scrollTo(0, 0);
-                }}
-              >
-                {listNums}
-              </button>
-            );
-          })}
+          <div className={style.footer}>
+            {listNums.map((listNums) => {
+              return (
+                <button
+                  className={style.button}
+                  onClick={() => {
+                    setSearchParams({
+                      genre: `${detail}`,
+                      page: `${listNums}`,
+                    });
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  {listNums}
+                </button>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>

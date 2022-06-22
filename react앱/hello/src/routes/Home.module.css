@@ -6,3 +6,15 @@
   align-items: center;
   background-color: rgb(233, 235, 241);
 }
+
+.footer {
+  display: flex;
+  margin: 50px 0px 80px 0px;
+}
+
+.button {
+  margin: 0px 5px;
+  border: 0;
+  outline: 0;
+  background: none;
+}
